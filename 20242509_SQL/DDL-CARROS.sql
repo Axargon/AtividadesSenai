@@ -35,3 +35,9 @@ CREATE TABLE historico_preco(
     ,PRIMARY KEY(id)
     ,FOREIGN KEY(id_carro) REFERENCES tb_carro(id)
 );
+
+ALTER TABLE tb_proprietario ADD  idade INT(3) NOT NULL;
+
+SELECT * FROM tb_proprietario 
+
+-- ALTER TABLE tb_proprietario DROP COLUMN idade;
