@@ -88,17 +88,6 @@ INSERT INTO tb_atendimento VALUES(
 	'1004'
     ,'101'
     ,'3'
-    ,'2024-06-03'
-    ,'Comportamento agressivo demais, encontrada ferida infeccionada na pata traseira esquerda'
+    ,'2024-06-04'
+    ,'Esta muito letárgico'
 );
-
-/*
-	id_atendimento INT(10) NOT NULL
-    ,id_pet INT(10) NOT NULL
-    ,id_veterinario INT (10) NOT NULL
-    ,dt_atendimento DATE NOT NULL
-    ,descricao VARCHAR(500) NOT NULL
-    ,PRIMARY KEY(id_atendimento)
-    ,FOREIGN KEY(id_pet) REFERENCES tb_pet(id_pet)
-    ,FOREIGN KEY(id_veterinario) REFERENCES tb_veterinario(id_vet)
-*/
