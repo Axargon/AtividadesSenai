@@ -45,6 +45,12 @@ INSERT INTO tb_autores VALUES(
 INSERT INTO tb_autores VALUES(
 	'2','Fedor Dostoyevsky','1839-03-11'
 );
+INSERT INTO tb_autores VALUES(
+	'4','Jane Austin','1775-12-16'
+);
+
+UPDATE tb_autores SET nome = "Jane Austin"  WHERE id_autor = 4;
+
 
 INSERT INTO tb_livros VALUES(
 	'1','O misterio dos 7 relogios','1929','1'
@@ -55,6 +61,9 @@ INSERT INTO tb_livros VALUES(
 INSERT INTO tb_livros VALUES(
 	'3','Dom Quixote','1919','3'
 );
+INSERT INTO tb_livros VALUES(
+	'4','Orgulho e Preconceito','1813','4'
+);
 
 INSERT INTO tb_membros VALUES(
 	'10','Richardson Celeveu','2024-01-01'
@@ -64,6 +73,9 @@ INSERT INTO tb_membros VALUES(
 );
 INSERT INTO tb_membros VALUES(
 	'14','Hesveralda Sincleir','2024-01-03'
+);
+INSERT INTO tb_membros VALUES(
+	'16','Chulifina Doronha','2024-01-04'
 );
 
 INSERT INTO tb_emprestimos VALUES(
@@ -200,3 +212,27 @@ WHERE
 					  tb_emprestimos
 				  )
 );
+
+SELECT 
+	aut.id_autor
+    ,aut.nome
+    ,lvr.id_livro
+    ,lvr.titulo
+    ,lvr.ano_publicacao
+FROM
+	tb_autores aut
+	RIGHT JOIN tb_livros lvr
+            ON aut.id_autor = lvr.id_autor
+UNION    
+SELECT 
+	lvr.id_autor
+    ,mbr.nome
+    ,lvr.id_livro
+    ,lvr.titulo
+    ,lvr.ano_publicacao
+FROM
+	tb_emprestimos emp
+    LEFT JOIN tb_livros lvr
+		   ON emp.id_livro = lvr.id_livro
+	LEFT JOIN tb_membros mbr
+		   ON mbr.id_membro = emp.id_membro
