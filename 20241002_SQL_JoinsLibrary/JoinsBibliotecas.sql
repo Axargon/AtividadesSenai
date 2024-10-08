@@ -67,7 +67,7 @@ FROM
 /*Exercício 2: Liste todos os membros e livros emprestados, incluindo membros
 que não pegaram livros e livros que não foram emprestados.*/
 
-SELECT
+(SELECT
 	*
 FROM
 	tb_emprestimos emp
@@ -75,16 +75,24 @@ FROM
             ON emp.id_livro = lv.id_livro
 	LEFT JOIN tb_membros mb
             ON mb.id_membro = emp.id_membro
-;
-		
+);
 
-SELECT
-	mb.nome
-    ,lv.titulo
-FROM
-	tb_emprestimos emp
-    RIGHT JOIN  tb_membros mb
-            ON emp.id_membro = mb.id_membro
-	RIGHT JOIN tb_livros lv
-            ON  lv.id_livro = emp.id_livro
+(	SELECT
+		*
+	FROM
+		tb_emprestimos emp
+		RIGHT JOIN  tb_membros mb
+				ON emp.id_membro = mb.id_membro
+		RIGHT JOIN tb_livros lv
+				ON  lv.id_livro = emp.id_livro
+UNION
+	SELECT
+		*
+	FROM
+		tb_emprestimos emp
+		RIGHT JOIN  tb_membros mb
+			   ON emp.id_membro = mb.id_membro
+		LEFT JOIN tb_livros lv
+			   ON  lv.id_livro = emp.id_livro
+);
 

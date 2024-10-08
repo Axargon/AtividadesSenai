@@ -18,6 +18,12 @@ INSERT INTO tb_veterinario VALUES (
     ,'Neurologia'
 	,'11928341716'
 );
+INSERT INTO tb_veterinario VALUES (
+	'4'
+    ,'Anyswaldo'
+    ,'Urogia'
+	,'1195318884'
+);
 
 INSERT INTO tb_cliente VALUES (
 	'21'
@@ -36,6 +42,18 @@ INSERT INTO tb_cliente VALUES (
     ,'Stephen Strange'
     ,'177A Bleecker Street,Greenwich Village, NY'
     ,'1(601)134894676'
+);
+INSERT INTO tb_cliente VALUES (
+	'24'
+    ,'Kurt Wagner'
+    ,'1407 Graymalkin Lane, Westchester, NY '
+    ,'1(601)181298132'
+);
+INSERT INTO tb_cliente VALUES (
+	'25'
+    ,'Remy Lebau'
+    ,'1407 Graymalkin Lane, Westchester, NY '
+    ,'1(601)182188167'
 );
 
 INSERT INTO tb_pet VALUES(
@@ -62,6 +80,15 @@ INSERT INTO tb_pet VALUES(
     ,'2006-06-13'
     ,'23'
 );
+INSERT INTO tb_pet VALUES(
+	'103'
+    ,'LeSwaine'
+    ,'pig'
+    ,'n/a'
+    ,'2006-06-18'
+    ,'25'
+);
+-- UPDATE tb_pet SET nome = "LeSwaine" WHERE id_pet = 103;
 
 INSERT INTO tb_atendimento VALUES(
 	'1000'
