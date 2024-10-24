@@ -118,7 +118,7 @@ def deletar_carro(id):
         
     
 
-
+#teste
 
 def gera_response(status, nome_conteudo, conteudo, mensagem=False):
     body = {}
